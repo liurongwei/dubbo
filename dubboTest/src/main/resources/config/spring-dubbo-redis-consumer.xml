@@ -4,7 +4,13 @@
        xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
     <dubbo:application name="demo-consumer"/>
-    <dubbo:registry protocol="redis" address="192.168.66.64:6379" check="true"/>
+    <dubbo:registry protocol="redis" address="172.20.4.107:6379" check="true">
+        <dubbo:parameter key="max.idle" value="50" />
+        <dubbo:parameter key="min.idle" value="50" />
+        <dubbo:parameter key="max.active" value="50" />
+        <dubbo:parameter key="timeout" value="50000" />
+        <dubbo:parameter key="num.tests.per.eviction.run" value="10000" />
+    </dubbo:registry>
     <dubbo:consumer timeout="5000" retries="2"
                     group="snowman.dubbo.demo"
                     version="1.0.0"/>

@@ -4,7 +4,7 @@
        xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
     <dubbo:application name="demo-provider"/>
-    <dubbo:registry protocol="zookeeper" address="192.168.66.64:2181" check="true"/>
+    <dubbo:registry protocol="zookeeper" address="192.168.87.10:30595" check="true"/>
     <dubbo:protocol name="dubbo" port="-1"/>
     <dubbo:provider threadpool="fixed"
                     threads="500"

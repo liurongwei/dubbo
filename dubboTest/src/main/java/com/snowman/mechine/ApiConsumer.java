@@ -5,6 +5,8 @@ import com.alibaba.dubbo.config.ReferenceConfig;
 import com.alibaba.dubbo.config.RegistryConfig;
 import com.snowman.service.DemoService;
 
+import java.io.IOException;
+
 /**
  * Created by Tommy on 2017/12/14.
  */
@@ -32,10 +34,13 @@ public class ApiConsumer {
         return referenceConfig.get();
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         ApiConsumer apiConsumer = new ApiConsumer();
         DemoService service = (DemoService) apiConsumer.getRemoteService();
         String result = service.sayHello("hanmeimei");
         System.out.println(result);
+
+
+        System.in.read();
     }
 }
